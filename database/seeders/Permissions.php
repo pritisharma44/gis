@@ -33,7 +33,7 @@ class Permissions extends Seeder
                     'key'             => 'service_engineers',
                     'parent_menu_id'  => 'no',
                     'route'           => "service-engineers.index",
-                    'sub_route'       => "service-engineers.index",
+                    'sub_route'       => "service-engineers.index,service-engineers.create,service-engineers.show",
                     'icon'            => "mdi mdi-account",
                     'priority'        => 12,
                     'status'          => 'active',

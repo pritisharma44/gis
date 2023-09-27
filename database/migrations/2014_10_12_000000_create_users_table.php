@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('otp')->nullable();
             $table->enum('status',['active','inactive'])->default('active');
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
