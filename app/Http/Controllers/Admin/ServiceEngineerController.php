@@ -90,7 +90,7 @@ class ServiceEngineerController extends Controller
         }
 
         User::create($data);
-        return view('admin.service-engineer.list');
+        return redirect('admin/service-engineers')->with('success','Service Engineer added successfully.');
 
     }
 
@@ -135,7 +135,8 @@ class ServiceEngineerController extends Controller
         $data['contact_no'] = $request->contact_no;
         $data['user_type'] = 'service_engineer';
         $user = User::find($id)->update($data);
-        return view('admin.service-engineer.list');
+        return redirect('admin/service-engineers')->with('success','Service Engineer updated successfully.');
+
 
     }
 

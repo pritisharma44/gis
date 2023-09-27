@@ -20,8 +20,7 @@
     <!-- PLUGINS CSS STYLE -->
     <link href="{{ url('assets/plugins/nprogress/nprogress.css') }}" rel="stylesheet" />
 
-    <link href="{{ url('assets/plugins/DataTables/DataTables-1.10.18/css/jquery.dataTables.min.css') }}"
-        rel="stylesheet" />
+    <link href="{{ url('assets/plugins/DataTables/DataTables-1.10.18/css/jquery.dataTables.min.css') }}" rel="stylesheet" />
 
     <link href="{{ url('assets/plugins/jvectormap/jquery-jvectormap-2.0.3.css') }}" rel="stylesheet" />
 
@@ -35,7 +34,7 @@
     <link id="main-css-href" rel="stylesheet" href="{{ url('assets/css/style.css') }}" />
 
     <link id="main-css" rel="stylesheet" href="{{ url('assets/css/custom.css') }}" />
-    
+
     <!-- Jquery CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -55,7 +54,23 @@
         });
         NProgress.start();
     </script>
+    <script>
+        $(document).ready(function() {
 
+            @if(Session::has('error'))
+            Swal.fire({
+                text: "{{ Session::get('error') }}",
+                icon: "error",
+            });
+            @endif
+            @if(Session::has('success'))
+            Swal.fire({
+                text: "{{ Session::get('success') }}",
+                icon: "success",
+            });
+            @endif
+        });
+    </script>
     <div id="toaster"></div>
 
     <div class="wrapper">
@@ -74,27 +89,26 @@
                     <!-- sidebar menu -->
                     <ul class="nav sidebar-inner" id="sidebar-menu">
                         @if (NavBar() == null)
-                            <script>
-                                location.reload();
-                            </script>
+                        <script>
+                            location.reload();
+                        </script>
                         @endif
                         @foreach (NavBar() as $value)
                         <?php $arrSubroute = explode(',', $value['permission']['sub_route']); ?>
                         @if ($value['permission']['parent_menu_id'] == 'no' && $value['permission']['key'] != 'settings')
                         <li class="<?php if (in_array(\Request::route()->getName(), $arrSubroute)) {
-                            echo 'active';
-                        } ?>">
-                                <a class="sidenav-item-link" href="{{ route($value['permission']['route']) }}">
-                                    <i class="{{ $value['permission']['icon'] }}"></i>
-                                    <span class="nav-text">{{ $value['permission']['name'] }}</span>
-                                </a>
-                            </li>
+                                        echo 'active';
+                                    } ?>">
+                            <a class="sidenav-item-link" href="{{ route($value['permission']['route']) }}">
+                                <i class="{{ $value['permission']['icon'] }}"></i>
+                                <span class="nav-text">{{ $value['permission']['name'] }}</span>
+                            </a>
+                        </li>
                         @endif
 
                         @if ($value['permission']['parent_menu_id'] == 'yes')
                         <li class="has-sub">
-                            <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
-                                data-target="#users" aria-expanded="false" aria-controls="users">
+                            <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#users" aria-expanded="false" aria-controls="users">
                                 <i class="mdi mdi-account"></i>
                                 <span class="nav-text">Users</span> <b class="caret"></b>
                             </a>
@@ -127,8 +141,7 @@
                     <div class="sidebar-footer-content">
                         <ul class="d-flex">
                             <li>
-                                <a href="user-account-settings.html" data-toggle="tooltip"
-                                    title="Profile settings"><i class="mdi mdi-settings"></i></a>
+                                <a href="user-account-settings.html" data-toggle="tooltip" title="Profile settings"><i class="mdi mdi-settings"></i></a>
                             </li>
                             {{-- <li>
                                 <a href="#" data-toggle="tooltip" title="No chat messages"><i
@@ -157,12 +170,11 @@
                     <div class="navbar-right ">
 
                         <ul class="nav navbar-nav">
-                          
+
                             <!-- User Account -->
                             <li class="dropdown user-menu">
                                 <button class="dropdown-toggle nav-link" data-toggle="dropdown">
-                                    <img src="{{url('assets/images/user/user-xs-01.jpg')}}" class="user-image rounded-circle"
-                                        alt="User Image" />
+                                    <img src="{{url('assets/images/user/user-xs-01.jpg')}}" class="user-image rounded-circle" alt="User Image" />
                                     <span class="d-none d-lg-inline-block">John Doe</span>
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-right">
@@ -191,8 +203,7 @@
                                     </li>
 
                                     <li class="dropdown-footer">
-                                        <a class="dropdown-link-item" href="{{route('logout')}}"> <i
-                                                class="mdi mdi-logout"></i> Log Out </a>
+                                        <a class="dropdown-link-item" href="{{route('logout')}}"> <i class="mdi mdi-logout"></i> Log Out </a>
                                     </li>
                                 </ul>
                             </li>
