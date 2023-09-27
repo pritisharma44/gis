@@ -11,22 +11,11 @@
                     <div class="col-xl-3 col-sm-6">
                         <div class="card card-default card-mini">
                             <div class="card-header">
-                                <h2>Service Engineers</h2>
-                                <div class="dropdown">
-                                    <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                        id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </div>
+                                <h2>Engineers</h2>
+                               
                                 <div class="sub-title">
-                                    <span class="mr-1">Sales of this year</span> |
-                                    <span class="mx-1">45%</span>
+                                    <span class="mr-1">Total Engineers</span> |
+                                    <span class="mx-1">45</span>
                                     <i class="mdi mdi-arrow-up-bold text-success"></i>
                                 </div>
                             </div>
@@ -43,21 +32,9 @@
                         <div class="card card-default card-mini">
                             <div class="card-header">
                                 <h2>Customers</h2>
-                                <div class="dropdown">
-                                    <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                        id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </div>
                                 <div class="sub-title">
-                                    <span class="mr-1">Expense of this year</span> |
-                                    <span class="mx-1">50%</span>
+                                    <span class="mr-1">Total Customers</span> |
+                                    <span class="mx-1">50</span>
                                     <i class="mdi mdi-arrow-down-bold text-danger"></i>
                                 </div>
                             </div>
@@ -73,22 +50,10 @@
                     <div class="col-xl-3 col-sm-6">
                         <div class="card card-default card-mini">
                             <div class="card-header">
-                                <h2>Sub Admins</h2>
-                                <div class="dropdown">
-                                    <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                        id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </div>
+                                <h2>Admins</h2>
                                 <div class="sub-title">
-                                    <span class="mr-1">Profit of this year</span> |
-                                    <span class="mx-1">20%</span>
+                                    <span class="mr-1">Total Admins</span> |
+                                    <span class="mx-1">20</span>
                                     <i class="mdi mdi-arrow-down-bold text-danger"></i>
                                 </div>
                             </div>
@@ -104,22 +69,10 @@
                     <div class="col-xl-3 col-sm-6">
                         <div class="card card-default card-mini">
                             <div class="card-header">
-                                <h2>$20,199</h2>
-                                <div class="dropdown">
-                                    <a class="dropdown-toggle icon-burger-mini" href="#" role="button"
-                                        id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </div>
+                                <h2>Jobs</h2>
                                 <div class="sub-title">
-                                    <span class="mr-1">Revenue of this year</span> |
-                                    <span class="mx-1">35%</span>
+                                    <span class="mr-1">Total Jobs</span> |
+                                    <span class="mx-1">35</span>
                                     <i class="mdi mdi-arrow-up-bold text-success"></i>
                                 </div>
                             </div>

@@ -130,6 +130,48 @@
                 });
             });
 
+            $("body").on('click', '.switch-input', function(e) {
+                e.preventDefault();
+                var id = $(this).data("id");
+                // Get the CSRF token value from the meta tag in your HTML
+                var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+                Swal.fire({
+                    html: 'You want to change status!',
+                    title: 'Are you sure?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            type: "post",
+                            url: '{{ url('admin/change-engineer-status') }}' + "/" + id,
+                            headers: {
+                                'X-CSRF-TOKEN': csrfToken // Include the CSRF token in the request headers
+                            },
+                            success: function(data) {
+                                var dataTable = $('#serviceEng').DataTable();
+                                dataTable.ajax.reload();
+
+                            },
+                            error: function(data) {
+                                var dataTable = $('#serviceEng').DataTable();
+                                dataTable.ajax.reload();
+
+                            }
+                        });
+                        Swal.fire(
+                            '',
+                            'User Status Updated Successfully.',
+                            'success'
+                        )
+                    }
+                });
+            });
+
         });
     </script>
 @endsection

@@ -149,4 +149,20 @@ class ServiceEngineerController extends Controller
         $post->delete();
         return response()->json(['success' => 'User deleted successfully.']);
     }
+    public function changeStatus($id)
+    {
+        $user = User::where('id',$id)->first();
+        if($user)
+        {
+            if($user->status == 'active')
+            {
+                $user->status = 'inactive';
+            }
+            else{
+                $user->status = 'active';
+            }
+            $user->save();
+            return redirect('admin/service-engineers')->with('success','Status updated successfully.');
+        }
+    }
 }

@@ -31,5 +31,6 @@ Route::prefix('admin')->middleware('auth:admin')->group(function () {
     Route::get('dashboard',[LoginController::class,'dashboard'])->name('admin.dashboard');
     Route::get('logout',[LoginController::class,'logout'])->name('logout');
     Route::resource('service-engineers', ServiceEngineerController::class);
+    Route::post('change-engineer-status/{id}',[ServiceEngineerController::class,'changeStatus'])->name('changeStatus');
 
 });
