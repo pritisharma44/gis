@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\ServiceEngineerController;
+use App\Http\Controllers\Admin\CustomerController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,5 +34,6 @@ Route::prefix('admin')->middleware('auth:admin')->group(function () {
     Route::get('logout',[LoginController::class,'logout'])->name('logout');
     Route::resource('service-engineers', ServiceEngineerController::class);
     Route::post('change-engineer-status/{id}',[ServiceEngineerController::class,'changeStatus'])->name('changeStatus');
+    Route::resource('customers', CustomerController::class);
 
 });
